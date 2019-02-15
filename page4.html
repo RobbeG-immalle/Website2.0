@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="website.css">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+    <div class="topnav">
+        <a href="website.html">Home</a>
+        <a href="page2.html">Dagverslagen</a>
+        <a href="page3.html">Photo du stage</a>
+        <a class="active" href="page4.html">Case Study</a>
+        <a href="page5.html">Bedrijfseconomische Analyse</a>
+        <a href="page6.html">Analyse van de huisstijl</a>
+
+    </div>
+    <div class="Footer">
+        <p>Contact info:
+            <br>
+            Email: robbe.gillis@immalle.be
+            <br>
+            Immaculata Instituut Malle
+        </p>
+    </div>    
+
+    </body>    
+    </html>
+
+    <html>
+    <h2>Opdracht 3: Case study</h2>
+
+    <h3>Onderwerp: Netwerk</h3>
+    <p>
+        Ik heb voor de case study gekozen voor het onderwerp 'Netwerk' omdat ik tijdens mijn stageperiode hier heel veel over gezien heb. <br />
+        <br />
+        Suez heeft over heel België, Nederland en Duitsland switches staan, ik heb tijdens mijn tweede stagedag (4 oktober 2018) een tabel mogen maken in excel met de hoeveelheid switches die er op elke locatie aanwezig waren. Ik moest ook bepaalde formules proberen schrijven om verschillende dingen te berekenen, bijvoorbeeld hoeveel een bepaalde locatie doortelde op basis van het aantal switches. De excel file bestaat uit 4 verschillende werkbladen. 1 voor elk land en dan nog een vierde werkblad waarop het algemene totaal voor alle landen nog eens wordt weergegeven. Ik heb in excel ook kennis gemaakt met nieuwe termen zoals conditional formatting. Ze hebben per land meer dan 60 switches, op meer dan 100 verschillende locaties in totaal.
+        <br>
+        <br>
+        <a href="RolloutFinal.xlsx" download>
+            <img src="excel.png" width="40" height="40">
+          </a>
+        <p style="color:red">Klik op het excel logo om de file te downloaden.</p>
+        <p>Op donderdag 4 oktober was een van de opdrachten op mijn stage was het netwerk van het bedrijf visueel voorstellen.
+            Hierbij ben ik veel onbekende termen tegengekomen zoals MPLS. 
+            MPLS is eigenlijk een toestel dat in verbinding staat met verschillende 'sites' van het bedrijf hierover loopt dus vooral corporate data. 
+            Het bedrijf werkt ook met een software genaamd Citrix. 
+            Citrix maakt het mogelijk mensen van bijvoorbeeld Nederland te laten werken op een computer die in het datacenter in Beerse draait. 
+            De visuele voorstelling mocht ik maken met een nieuwe software, die heel hard lijkt op draw.io. 
+            De software "Visio" is een software ontwikkeld door Microsoft. 
+            Op de tekeningen zou ik voor mijn case study verschillende situaties willen voorstellen en uitleggen hoe de verschillende data door het netwerk loopt.</p>
+        
+        <p style="padding-left:25%; font-size: 25; font: outline;">De visuele voorstelling die ik gemaakt heb:</p> 
+ 
+        <img src="NetwerkSuez.PNG" alt="Made with visio" width="860" height="500" style="padding-left: 25%;">
+    </p>
+    
+    <h4>Situatie 1: Het hele netwerk werkt</h4>
+    <p>De corporate data van PC 1 zal via de access switch geleidt worden naar de Fortinet Firewall omdat hij niet langs de MPLS kan gaan sinds deze down is. De data zal door een VPN tunnel moeten gaan die van remote Firewall naar central Firewall loopt, over internet. Eens de data aankomt bij de remote Firewall wordt hij verder geleidt naar de core switch die zo naar de gewenste server gaat. De internet data kan nog steeds via de firewall rechtsreeks naar het internet geleidt worden.
+            Voor de corporate data van PC 2 is deze situatie niet echt van toepassing omdat er geen MPLS aanwezig is. De internet data wordt op dezelfde manier verstuurd als bij de vorige situatie.
+    </p>
+    <h4>Situatie 2: MPLS Down</h4>
+    <p>De corporate data van PC 1 zal via de access switch geleidt worden naar de Fortinet Firewall omdat hij niet langs de MPLS kan gaan sinds deze down is. 
+        De data zal door een private VPN tunnel moeten gaan die van Firewall naar Firewall loopt, over internet. 
+        Eens de data aankomt bij de fortinet Firewall wordt hij verder geleidt naar de core switch die zo naar de Citrix server gaat. 
+        De internet data kan nog steeds via de de firewall rechtsreeks naar het internet geleidt worden.
+        Voor PC 2 zal de corporate data via de access switch naar de firewall geleidt worden en zo via nog een andere private VPN tunnel naar de andere Fortinet firewall geleidt worden waardoor we terug bij de core switch terechtkomen en zo de data kunnen verder sturen naar de Citrix server. 
+        De internet data wordt op dezelfde manier verstuurd als bij de vorige situatie.</p>
+        <h4>Situatie 3: Internet Down</h4>
+    <p> Voor PC 1 zal de corporate data net zoals bij situatie 1 gewoon via de MPLS de weg afleggen naar de server.
+        De internet data zal naar de access switch gaan, zo naar de remote fortinet firewall, deze firewall zal dan de data sturen naar waar het moet. 
+        In dit geval zal het terug langs de access switch gaan, zo naar de router en dan naar de MPLS. De MPLS stuurt de data door naar de core switch en dan naar de gewenste server en zo naar het internet. 
+        De data van PC2 kan niet verstuurd worden als het internet down is.</p>    
+    </html>
+
+    
